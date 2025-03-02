@@ -42,11 +42,12 @@ namespace GradeBook.UserInterfaces
             }
            
             var name = parts[1];
-            BaseGradeBook gradeBook = new BaseGradeBook(name);  
+            //BaseGradeBook gradeBook = new BaseGradeBook(name);  
             Console.WriteLine("Created gradebook {0}.", name);
-            GradeBookUserInterface.CommandLoop(gradeBook);
-            var type = parts[2];
-            if (type == "standart")
+            //GradeBookUserInterface.CommandLoop(gradeBook);
+            var type = parts[2].ToLower();
+            BaseGradeBook gradeBook;
+            if (type == "standard")
             {
                 gradeBook = new StandardGradeBook(name);
             }
